@@ -10,7 +10,7 @@ export async function POST(request: Request) {
     return Response.json(
       {
         fehler:
-          "In der Datei .env fehlt der Eintrag EUROUTER_API_KEY. Lege die Datei an, trage deinen Schlüssel ein und starte den Entwicklungsserver neu.",
+          "In der Datei .env.local fehlt der Eintrag EUROUTER_API_KEY. Lege die Datei an, trage deinen Schlüssel ein und starte den Entwicklungsserver neu.",
       },
       { status: 500 },
     );
@@ -55,7 +55,7 @@ export async function POST(request: Request) {
       const text = await antwort.text();
       if (antwort.status === 401 || antwort.status === 403) {
         return Response.json(
-          { fehler: "Der Schlüssel wurde abgelehnt. Prüfe den Wert von EUROUTER_API_KEY in deiner .env." },
+          { fehler: "Der Schlüssel wurde abgelehnt. Prüfe den Wert von EUROUTER_API_KEY in deiner .env.local." },
           { status: 502 },
         );
       }
