@@ -20,7 +20,7 @@ die vollständige Liste.
 ## Zugang zum Sprachmodell
 
 Die Anwendung spricht mit EUrouter. Dafür wird ein API-Schlüssel gebraucht, und
-zwar ein eigener je Person. Er gehört in eine Datei namens `.env` im
+zwar ein eigener je Person. Er gehört in eine Datei namens `.env.local` im
 Projektordner. Als Vorlage liegt `.env.example` daneben.
 
 In derselben Datei steht auch, welches Modell benutzt wird. Bleibt das Feld leer,
