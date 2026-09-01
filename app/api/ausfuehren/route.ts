@@ -1,7 +1,7 @@
 import { findePrompt } from "@/data/prompts";
 
 const EUROUTER_URL = "https://api.eurouter.ai/api/v1/chat/completions";
-const MODELL = "mistral-large-3";
+const MODELL = process.env.EUROUTER_MODELL ?? "mistral-large-3";
 
 export async function POST(request: Request) {
   const schluessel = process.env.EUROUTER_API_KEY;

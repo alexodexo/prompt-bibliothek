@@ -23,6 +23,9 @@ Die Anwendung spricht mit EUrouter. Dafür wird ein API-Schlüssel gebraucht, un
 zwar ein eigener je Person. Er gehört in eine Datei namens `.env` im
 Projektordner. Als Vorlage liegt `.env.example` daneben.
 
+In derselben Datei steht auch, welches Modell benutzt wird. Bleibt das Feld leer,
+nimmt die Anwendung `mistral-large-3`.
+
 Ohne Schlüssel startet die Anwendung, aber das Ausführen eines Prompts endet mit
 einer Meldung.
 
