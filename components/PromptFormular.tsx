@@ -47,10 +47,10 @@ export default function PromptFormular({ promptId }: Props) {
 
   return (
     <>
-      <form onSubmit={absenden} className="mt-8">
+      <form onSubmit={absenden} className="regal mt-8 pt-6">
         <label
           htmlFor="eingabe"
-          className="mb-2 block text-xs font-bold uppercase tracking-[0.22em] text-tief/45"
+          className="mb-3 block text-xs font-bold uppercase tracking-[0.22em] text-tinte/45"
         >
           Dein Text
         </label>
@@ -60,24 +60,24 @@ export default function PromptFormular({ promptId }: Props) {
           onChange={(e) => setEingabe(e.target.value)}
           rows={9}
           placeholder="Text hier einfügen"
-          className="w-full resize-y rounded-2xl border-2 border-tief/10 bg-white p-4 text-[15px] leading-relaxed text-tief outline-none transition placeholder:text-tief/30 focus:border-koralle focus:ring-4 focus:ring-koralle/15"
+          className="w-full resize-y border border-linie bg-stuck/50 p-4 text-[15px] leading-relaxed text-tinte outline-none transition placeholder:text-tinte/30 focus:border-aqua focus:bg-white"
         />
-        <div className="mt-4 flex flex-wrap items-center gap-4">
+        <div className="mt-5 flex flex-wrap items-center gap-5">
           <button
             type="submit"
             disabled={laedt || eingabe.trim() === ""}
-            className="rounded-full bg-gradient-to-r from-pink to-koralle px-8 py-3 font-bold text-white shadow-[0_12px_28px_-12px_rgba(255,46,147,0.9)] transition hover:brightness-105 disabled:cursor-not-allowed disabled:bg-none disabled:bg-tief/15 disabled:text-tief/40 disabled:shadow-none"
+            className="bg-tinte px-9 py-3.5 text-xs font-bold uppercase tracking-[0.18em] text-white transition hover:bg-aqua disabled:cursor-not-allowed disabled:bg-linie disabled:text-tinte/35"
           >
             Prompt ausführen
           </button>
-          <span className="text-sm text-tief/40">
+          <span className="text-xs font-semibold uppercase tracking-[0.14em] text-tinte/35">
             {eingabe.trim() === "" ? "Erst Text einfügen" : `${eingabe.length} Zeichen`}
           </span>
         </div>
       </form>
 
       {fehler && (
-        <p className="mt-7 rounded-2xl border-2 border-pink/25 bg-pink/5 p-5 leading-relaxed text-pink">
+        <p className="mt-8 border-l-4 border-tinte bg-stuck px-5 py-4 text-[15px] leading-relaxed text-tinte/80">
           {fehler}
         </p>
       )}

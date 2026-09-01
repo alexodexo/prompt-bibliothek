@@ -1,72 +1,45 @@
 @import "tailwindcss";
 
 @theme {
-  --color-sand: #FFF6EC;
-  --color-tief: #16233F;
-  --color-pink: #FF2E93;
-  --color-koralle: #FF6B35;
-  --color-sonne: #FFC53D;
-  --color-tuerkis: #12CDC0;
-  --color-himmel: #38BDF8;
+  /* Miami White: Stuck, Tinte, ein einziger Akzent. */
+  --color-stuck: #F6F4EF;
+  --color-tinte: #111820;
+  --color-aqua: #00A39C;
+  --color-linie: #E3DFD6;
 
   --font-sans:
     ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
 html {
-  background-color: var(--color-sand);
+  background-color: var(--color-stuck);
 }
 
 body {
   font-family: var(--font-sans);
-  position: relative;
+  color: var(--color-tinte);
 }
 
-/* Der Farbschleier liegt fest hinter dem Inhalt und wandert beim Scrollen nicht. */
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  pointer-events: none;
-  background:
-    radial-gradient(1000px 620px at 10% -6%, rgba(255, 46, 147, 0.20), transparent 60%),
-    radial-gradient(820px 520px at 96% 4%, rgba(18, 205, 192, 0.22), transparent 58%),
-    radial-gradient(700px 520px at 70% 100%, rgba(255, 197, 61, 0.18), transparent 62%);
+/* Eyebrow: die drei waagerechten Linien der Art-Deco-Fassaden. */
+.eyebrow {
+  height: 11px;
+  background-image: repeating-linear-gradient(
+    to bottom,
+    var(--color-aqua) 0 3px,
+    transparent 3px 4px
+  );
 }
 
-/* Sonnenuntergang als Textfarbe */
-.sonnenuntergang {
-  background-image: linear-gradient(100deg, #FF2E93 0%, #FF6B35 45%, #FFC53D 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
-
-/* Karte mit farbiger Oberkante */
-.karte {
-  position: relative;
-  overflow: hidden;
-  transition: transform 0.18s ease, box-shadow 0.18s ease;
-}
-.karte::before {
-  content: "";
-  position: absolute;
-  inset: 0 0 auto 0;
-  height: 5px;
-  background-image: linear-gradient(90deg, #FF2E93, #FF6B35 55%, #FFC53D);
-}
-.karte:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 18px 40px -18px rgba(22, 35, 63, 0.4);
-}
-.karte-tuerkis::before {
-  background-image: linear-gradient(90deg, #12CDC0, #38BDF8);
-}
-
-/* Streifen unter der Hauptueberschrift */
-.streifen {
+.eyebrow-schmal {
   height: 7px;
-  border-radius: 999px;
-  background-image: linear-gradient(90deg, #FF2E93, #FF6B35 35%, #FFC53D 65%, #12CDC0 100%);
+  background-image: repeating-linear-gradient(
+    to bottom,
+    var(--color-aqua) 0 2px,
+    transparent 2px 3px
+  );
+}
+
+/* Waagerechte Haarlinie mit Beschriftung */
+.regal {
+  border-top: 1px solid var(--color-linie);
 }
