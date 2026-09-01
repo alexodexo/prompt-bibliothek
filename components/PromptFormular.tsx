@@ -47,10 +47,10 @@ export default function PromptFormular({ promptId }: Props) {
 
   return (
     <>
-      <form onSubmit={absenden} className="regal mt-8 pt-6">
+      <form onSubmit={absenden} className="mt-9">
         <label
           htmlFor="eingabe"
-          className="mb-3 block text-xs font-bold uppercase tracking-[0.22em] text-tinte/45"
+          className="mb-3 block text-xs font-bold uppercase tracking-[0.24em] text-cyan"
         >
           Dein Text
         </label>
@@ -60,24 +60,24 @@ export default function PromptFormular({ promptId }: Props) {
           onChange={(e) => setEingabe(e.target.value)}
           rows={9}
           placeholder="Text hier einfügen"
-          className="w-full resize-y border border-linie bg-stuck/50 p-4 text-[15px] leading-relaxed text-tinte outline-none transition placeholder:text-tinte/30 focus:border-aqua focus:bg-white"
+          className="w-full resize-y rounded-xl border border-neonpink/25 bg-nacht/60 p-4 text-[15px] leading-relaxed text-hell outline-none transition placeholder:text-gedaempft/50 focus:border-cyan focus:shadow-[0_0_0_3px_rgba(34,230,245,0.18)]"
         />
         <div className="mt-5 flex flex-wrap items-center gap-5">
           <button
             type="submit"
             disabled={laedt || eingabe.trim() === ""}
-            className="bg-tinte px-9 py-3.5 text-xs font-bold uppercase tracking-[0.18em] text-white transition hover:bg-aqua disabled:cursor-not-allowed disabled:bg-linie disabled:text-tinte/35"
+            className="rounded-full bg-gradient-to-r from-magenta via-neonpink to-violett px-9 py-3.5 text-xs font-black uppercase tracking-[0.2em] text-white shadow-[0_0_28px_-4px_rgba(255,46,139,0.85)] transition hover:brightness-110 disabled:cursor-not-allowed disabled:bg-none disabled:bg-hell/10 disabled:text-gedaempft/60 disabled:shadow-none"
           >
-            Prompt ausführen
+            {laedt ? "läuft" : "Prompt ausführen"}
           </button>
-          <span className="text-xs font-semibold uppercase tracking-[0.14em] text-tinte/35">
+          <span className="text-xs font-bold uppercase tracking-[0.16em] text-gedaempft/70">
             {eingabe.trim() === "" ? "Erst Text einfügen" : `${eingabe.length} Zeichen`}
           </span>
         </div>
       </form>
 
       {fehler && (
-        <p className="mt-8 border-l-4 border-tinte bg-stuck px-5 py-4 text-[15px] leading-relaxed text-tinte/80">
+        <p className="mt-8 rounded-xl border border-magenta/50 bg-magenta/10 px-5 py-4 text-[15px] leading-relaxed text-neonpink">
           {fehler}
         </p>
       )}

@@ -20,33 +20,32 @@ export default async function PromptSeite({
   }
 
   return (
-    <main className="mx-auto w-full max-w-3xl px-6 pb-24 pt-12">
+    <main className="mx-auto w-full max-w-3xl px-6 pb-28 pt-12">
       <Link
         href="/"
-        className="text-xs font-bold uppercase tracking-[0.2em] text-tinte/45 transition hover:text-aqua"
+        className="text-xs font-bold uppercase tracking-[0.22em] text-gedaempft transition hover:text-cyan"
       >
         ← Alle Prompts
       </Link>
 
-      <article className="mt-6 border border-linie bg-white">
-        <div className="eyebrow" />
-        <div className="px-8 py-9 sm:px-10">
-          <h1 className="text-4xl font-black uppercase leading-[0.95] tracking-[-0.025em] sm:text-5xl">
-            {prompt.titel}
-          </h1>
-          <p className="mt-3 text-lg text-tinte/60">{prompt.beschreibung}</p>
+      <article className="glas glas-cyan mt-6 rounded-2xl px-8 py-9 sm:px-10">
+        <h1 className="neon-titel text-4xl font-black uppercase italic leading-[0.92] tracking-[-0.025em] sm:text-5xl">
+          {prompt.titel}
+        </h1>
+        <p className="mt-3 text-lg text-neonpink">{prompt.beschreibung}</p>
 
-          <div className="regal mt-8 pt-6">
-            <p className="text-xs font-bold uppercase tracking-[0.22em] text-aqua">
-              Diese Anweisung geht an das Modell
-            </p>
-            <p className="mt-3 whitespace-pre-wrap text-[15px] leading-relaxed text-tinte/75">
-              {prompt.text}
-            </p>
-          </div>
+        <div className="horizont mt-8" />
 
-          <PromptFormular promptId={prompt.id} />
+        <div className="mt-7">
+          <p className="neon-cyan text-xs font-bold uppercase tracking-[0.24em]">
+            Diese Anweisung geht an das Modell
+          </p>
+          <p className="mt-3 whitespace-pre-wrap text-[15px] leading-relaxed text-hell/85">
+            {prompt.text}
+          </p>
         </div>
+
+        <PromptFormular promptId={prompt.id} />
       </article>
     </main>
   );
