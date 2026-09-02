@@ -1,10 +1,6 @@
 "use client";
 
 // Eingabefeld und Absendeknopf für einen Prompt.
-//
-// Was hier noch fehlt: eine Anzeige, solange das Modell antwortet. Der Zustand
-// `laedt` ist vorhanden und schaltet den Knopf ab, aber man sieht nicht, dass
-// im Hintergrund etwas passiert. Bei längeren Texten wirkt die Seite tot.
 
 import { useState } from "react";
 import Ergebnis from "./Ergebnis";
@@ -75,6 +71,13 @@ export default function PromptFormular({ promptId }: Props) {
           </span>
         </div>
       </form>
+
+      {laedt && (
+        <p className="mt-8 flex items-center gap-3 rounded-xl border border-cyan/30 bg-cyan/10 px-5 py-4 text-[15px] leading-relaxed text-cyan">
+          <span className="h-4 w-4 animate-spin rounded-full border-2 border-cyan/30 border-t-cyan" />
+          Das Modell antwortet …
+        </p>
+      )}
 
       {fehler && (
         <p className="mt-8 rounded-xl border border-magenta/50 bg-magenta/10 px-5 py-4 text-[15px] leading-relaxed text-neonpink">
