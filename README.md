@@ -1,5 +1,9 @@
 # Prompt-Bibliothek
 
+## Team
+
+- Arben Alil (arben28)
+
 Eine kleine Sammlung von Prompts für die tägliche Arbeit. Man wählt einen aus,
 fügt seinen eigenen Text ein und lässt beides über ein Sprachmodell laufen.
 
