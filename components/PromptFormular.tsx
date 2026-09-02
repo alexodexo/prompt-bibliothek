@@ -76,6 +76,21 @@ export default function PromptFormular({ promptId }: Props) {
         </div>
       </form>
 
+      {laedt && (
+        <div
+          role="status"
+          aria-live="polite"
+          className="mt-8 flex items-center gap-3 rounded-xl border border-cyan/30 bg-cyan/5 px-5 py-4 text-[15px] font-medium text-cyan"
+        >
+          <span className="flex gap-1.5" aria-hidden="true">
+            <span className="h-2 w-2 animate-bounce rounded-full bg-cyan [animation-delay:-0.3s]" />
+            <span className="h-2 w-2 animate-bounce rounded-full bg-cyan [animation-delay:-0.15s]" />
+            <span className="h-2 w-2 animate-bounce rounded-full bg-cyan" />
+          </span>
+          Das Modell antwortet …
+        </div>
+      )}
+
       {fehler && (
         <p className="mt-8 rounded-xl border border-magenta/50 bg-magenta/10 px-5 py-4 text-[15px] leading-relaxed text-neonpink">
           {fehler}
