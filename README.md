@@ -1,5 +1,10 @@
 # Prompt-Bibliothek
 
+## Team
+
+- Nika Storm ([@nikastorm-2026](https://github.com/nikastorm-2026))
+- _Partner folgt_
+
 Eine kleine Sammlung von Prompts für die tägliche Arbeit. Man wählt einen aus,
 fügt seinen eigenen Text ein und lässt beides über ein Sprachmodell laufen.
 
